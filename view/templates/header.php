@@ -6,9 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Barbershop</title>
 	<link rel="stylesheet" href="<?= URL ?>/css/style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Bootstrap includes -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-inverse">
@@ -26,20 +28,28 @@
 					<li><a href="<?= URL ?>Barber/prices">Our prices</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
+					<?php if(!empty($_SESSION['loggedIn'])){ ?>
 					<!-- Dropdown Menu -->
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><!--<?= $session['username'] ?>-->Lukas <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?= $_SESSION['Username'] ?> <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Settings</a></li>
-							<li><a href="#">Appointments</a></li>
-							<li><a href="#">Schedual</a></li>
+							<li><a href="<?= URL ?>Barber/settings">Settings</a></li>
+							<li><a href="<?= URL ?>Barber/appointments">Appointments</a></li>
+							<li><a href="<?= URL ?>Barber/scheduals">Schedual</a></li>
+							<li><a href="<?= URL ?>Login/logout">Logout</a></li>
 						</ul>
 					</li>
+					<?php } else{ ?>
+						<ul class="nav navbar-nav">
+							<li><a href="<?= URL ?>Login/index">Login</a></li>
+							<li><a href="<?= URL ?>Login/register">Register</a></li>
+						</ul>
+					<?php } ?>
 				</ul>
 			</div>
-
-
 		</div>
 
 	</nav>
-<div class="container">
+	<div class="container">
+		<div class="content-wrapper">
+		    <div class="content">
