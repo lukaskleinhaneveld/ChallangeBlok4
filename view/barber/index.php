@@ -1,5 +1,5 @@
 <div class="content">
-    <h2>Welcome to Chop Chop!</h2>
+    <h2>Welkom bij Chop Chop!</h2>
     <br>
     <div class="box-content">
         <p>&nbsp;</p>

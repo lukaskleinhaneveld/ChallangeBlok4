@@ -25,17 +25,22 @@
 			<div>
 				<ul class="nav navbar-nav">
 					<li><a href="<?= URL ?>Barber/index">Home</a></li>
-					<li><a href="<?= URL ?>Barber/prices">Our prices</a></li>
+					<li><a href="<?= URL ?>Barber/prices">Prijzen</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<?php if(!empty($_SESSION['loggedIn'])){ ?>
+						<?php if ( $_SESSION['isBarberer'] == 1) { ?>
+							<ul class="nav navbar-nav">
+								<li><a href="<?= URL ?>barberers/index">Rooster</a></li>
+								<li><a href="<?= URL ?>barberers/schedual">Planning</a></li>
+							</ul>
+						<?php } ?>
 					<!-- Dropdown Menu -->
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?= $_SESSION['Username'] ?> <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="<?= URL ?>Barber/settings">Settings</a></li>
-							<li><a href="<?= URL ?>Barber/appointments">Appointments</a></li>
-							<li><a href="<?= URL ?>Barber/scheduals">Schedual</a></li>
+							<li><a href="<?= URL ?>Barber/account">Account</a></li>
+							<li><a href="<?= URL ?>Barber/afspraken">Mijn Afspraken</a></li>
 							<li><a href="<?= URL ?>Login/logout">Logout</a></li>
 						</ul>
 					</li>

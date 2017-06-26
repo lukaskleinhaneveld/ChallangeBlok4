@@ -1,4 +1,4 @@
-<h2>Our prices</h2>
+<h2>Onze prijzen</h2>
     <table width="200" border="0" cellspacing="0" cellpadding="2">
         <tbody>
             <tr>

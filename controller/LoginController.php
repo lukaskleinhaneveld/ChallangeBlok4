@@ -22,8 +22,7 @@ function registerSave(){
 }
 
 function logout(){
-    unset($_SESSION);
+    session_destroy();
     $_SESSION['loggedIn'] = 0;
     header("Location:" . URL . "Barber/index");
-
 }
