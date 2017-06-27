@@ -1,13 +1,12 @@
 <?php
+include_once('../model/BarberModel.php');
 
 function index(){
     render("barberers/index", array(
-		'students' => getAllStudents()
-	));
+        //'schedual' => getSchedual($Id)
+    ));
 }
 
 function schedual(){
-    render("barberers/schedual", array(
-		'students' => getAllStudents()
-	));
+    render("barberers/schedual");
 }

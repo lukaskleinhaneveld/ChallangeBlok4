@@ -1,13 +1,19 @@
 <?php
 
-function getAppointments(){
+function getSchedual($Id){
 	$db = openDatabaseConnection();
 
-	$sql = "SELECT * FROM appointments";
+	$sql = "SELECT * FROM agenda WHERE Id = :Id";
 	$query = $db->prepare($sql);
-	$query->execute();
+	$query->execute(array(
+		':Id' => $Id
+	));
 
 	$db = null;
 
 	return $query->fetch();
+}
+
+function createAppointment(){
+
 }

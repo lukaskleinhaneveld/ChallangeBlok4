@@ -17,7 +17,7 @@ function registerDB(){
 		return "Not all fields have been filled in properly";
 	}
 
-	$sql = "INSERT INTO users (Name, Adress, PostalCode, City, Phone, Cell, Email,Password) VALUES (:Name, :Adress, :PostalCode, :City, :Phone, :Cell, :Email, :Password)";
+	$sql = "INSERT INTO users (Name, Adress, PostalCode, City, Phone, Cell, Email, Password) VALUES (:Name, :Adress, :PostalCode, :City, :Phone, :Cell, :Email, :Password)";
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		':Name' => $Name,
