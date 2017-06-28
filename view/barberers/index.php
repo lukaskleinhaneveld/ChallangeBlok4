@@ -41,7 +41,5 @@
                 </tr>
             <?php }
         } ?>
-
     </table>
-    <a href="<?= URL ?>planning/create">Toevoegen</a>
 </div>

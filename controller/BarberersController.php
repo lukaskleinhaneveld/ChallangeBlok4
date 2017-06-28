@@ -10,3 +10,7 @@ function index(){
 function schedual(){
     render("barberers/schedual");
 }
+
+function create(){
+    render("barberers/create");
+}

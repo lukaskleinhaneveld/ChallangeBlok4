@@ -13,7 +13,3 @@ function getSchedual($Id){
 
 	return $query->fetch();
 }
-
-function createAppointment(){
-
-}
